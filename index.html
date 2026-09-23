@@ -12,8 +12,8 @@
     --line: rgba(255,255,255,0.09);
     --line-strong: rgba(255,255,255,0.18);
     --text:#F2F3F5;
-    --soft:#9CA3AB;
-    --faint: rgba(242,243,245,0.44);
+    --soft:#C4CAD1;
+    --faint: rgba(242,243,245,0.62);
     --accent:#2FBF8F;
     --accent-dim: rgba(47,191,143,0.15);
     --accent-glow: rgba(47,191,143,0.42);
@@ -27,7 +27,7 @@
     --ease: cubic-bezier(0.22,1,0.36,1);
     --gut: clamp(16px, 4.4vw, 84px);
     --h2: clamp(1.9rem, min(3.5vw, 6.4vh), 3.7rem);
-    --body: clamp(0.95rem, min(1.12vw, 2.05vh), 1.22rem);
+    --body: clamp(1rem, min(1.2vw, 2.2vh), 1.3rem);
   }
   html, body{ height:100%; }
   body{
@@ -128,11 +128,11 @@
   .slide.is-active{ visibility:visible; }
   .slide[data-side="R"]{ justify-content:flex-end; }
   .slide[data-side="C"]{ align-items:flex-start; }
-  .copy{ position:relative; width:min(600px, 43vw); isolation:isolate; }
+  .copy{ position:relative; width:min(600px, 43vw); isolation:isolate; text-shadow: 0 1px 2px rgba(0,0,0,0.7), 0 0 22px rgba(0,0,0,0.55); }
   .slide[data-side="C"] .copy{ width:min(520px, 40vw); }
   .copy::before{
     content:""; position:absolute; inset:-90px -110px; z-index:-1; pointer-events:none;
-    background: radial-gradient(closest-side, rgba(7,8,9,0.86) 38%, rgba(7,8,9,0.55) 66%, transparent);
+    background: radial-gradient(farthest-side, rgba(7,8,9,0.94) 62%, rgba(7,8,9,0.7) 80%, transparent);
   }
   .copy > * + *{ margin-top: clamp(15px, 2.6vh, 30px); }
 
@@ -142,17 +142,17 @@
   .is-leaving .it{ opacity:0; transform: translateY(-14px); filter: blur(6px); transition-duration:.35s; transition-delay:0s; }
 
   /* ตัวอักษร */
-  .eyebrow{ display:flex; align-items:center; gap:10px; margin:0; font:500 0.72rem var(--mono); letter-spacing:0.18em; text-transform:uppercase; color:var(--soft); }
+  .eyebrow{ display:flex; align-items:center; gap:10px; margin:0; font:500 0.8rem var(--mono); letter-spacing:0.18em; text-transform:uppercase; color:var(--soft); }
   .eyebrow::before{ content:""; width:34px; height:1px; background:var(--gold-dim); }
   .eyebrow em{ font-style:normal; color:var(--accent); background:var(--accent-dim); padding:3px 8px; border-radius:6px; letter-spacing:0.14em; }
   h1, h2{ margin:0; font-weight:300; text-wrap:balance; }
-  h2{ font-family:var(--display); font-size:var(--h2); font-weight:300; letter-spacing:0; line-height:1.34; }
+  h2{ font-family:var(--display); font-size:var(--h2); font-weight:400; letter-spacing:0; line-height:1.34; }
   h2 .muted, .tagline .muted{ display:block; color:var(--soft); }
   .accent{ color:var(--accent); }
   .nb{ white-space:nowrap; }
   .wordmark{ font-size: clamp(3.2rem, min(7.2vw, 13vh), 7.4rem); font-weight:500; letter-spacing:-0.05em; line-height:1.05; }
   .wordmark span{ color:var(--accent); }
-  .tagline{ margin:0; font-family:var(--display); font-size: clamp(1.5rem, min(2.7vw, 4.8vh), 2.7rem); font-weight:300; letter-spacing:0; line-height:1.4; }
+  .tagline{ margin:0; font-family:var(--display); font-size: clamp(1.5rem, min(2.7vw, 4.8vh), 2.7rem); font-weight:400; letter-spacing:0; line-height:1.4; }
   .lead{ margin:0; font-size:var(--body); color:var(--soft); line-height:1.75; max-width:34em; }
   .byline{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
   .byline .mono{ font:500 0.7rem var(--mono); letter-spacing:0.16em; text-transform:uppercase; color:var(--faint); }
@@ -162,7 +162,7 @@
   /* รายการหัวข้อ (ไอคอน + คำอธิบาย) */
   .points{ list-style:none; padding:0; display:flex; flex-direction:column; gap: clamp(10px, 1.9vh, 20px); }
   .points li{ display:grid; grid-template-columns: 44px 1fr; gap:16px; align-items:start; }
-  .points b{ display:block; font-weight:500; font-size: clamp(1.02rem, min(1.35vw, 2.45vh), 1.42rem); line-height:1.45; }
+  .points b{ display:block; font-weight:600; font-size: clamp(1.02rem, min(1.35vw, 2.45vh), 1.42rem); line-height:1.45; }
   .points div > span{ display:block; color:var(--soft); font-size:var(--body); line-height:1.65; }
   .ic{
     width:44px; height:44px; border-radius:13px; display:grid; place-items:center; color:var(--c, var(--accent));
@@ -191,11 +191,11 @@
   /* ผู้ช่วย AI */
   .ai-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 1.8vh, 20px) 28px; }
   .ai-grid > div{ padding-top: clamp(8px, 1.2vh, 12px); border-top:1px solid var(--line); }
-  .ai-grid .k{ display:block; font:500 0.6rem var(--mono); letter-spacing:0.16em; color:var(--gold-dim); }
-  .ai-grid b{ display:block; margin-top:4px; font-weight:500; font-size: clamp(0.98rem, min(1.2vw, 2.2vh), 1.2rem); }
-  .ai-grid p{ margin:4px 0 0; font-size: clamp(0.82rem, min(0.95vw, 1.75vh), 0.98rem); color:var(--soft); line-height:1.55; }
+  .ai-grid .k{ display:block; font:500 0.7rem var(--mono); letter-spacing:0.16em; color:var(--gold); }
+  .ai-grid b{ display:block; margin-top:4px; font-weight:600; font-size: clamp(0.98rem, min(1.2vw, 2.2vh), 1.2rem); }
+  .ai-grid p{ margin:4px 0 0; font-size: clamp(0.9rem, min(1.05vw, 1.9vh), 1.08rem); color:var(--soft); line-height:1.55; }
   .chat{ display:flex; flex-direction:column; gap:8px; max-width:440px; }
-  .msg{ max-width:88%; padding:9px 13px; border-radius:15px; font-size: clamp(0.84rem, min(0.98vw, 1.8vh), 1rem); line-height:1.6; min-height:1.6em; }
+  .msg{ max-width:88%; padding:9px 13px; border-radius:15px; font-size: clamp(0.9rem, min(1.05vw, 1.9vh), 1.06rem); line-height:1.6; min-height:1.6em; }
   .msg.me{ margin-left:auto; background:var(--accent-dim); border:1px solid rgba(47,191,143,0.32); border-bottom-right-radius:5px; }
   .msg.bot{ background: rgba(255,255,255,0.045); border:1px solid var(--line); border-bottom-left-radius:5px; }
   .dots{ display:inline-flex; gap:4px; padding:5px 0; }
@@ -207,13 +207,13 @@
   .stats{ display:grid; grid-template-columns: repeat(4, 1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .stats > div{ padding: clamp(12px, 2vh, 20px) 10px; text-align:center; border-left:1px solid var(--line); }
   .stats > div:first-child{ border-left:0; }
-  .stats b{ display:block; font-family:var(--display); font-weight:200; font-size: clamp(1.35rem, min(2.1vw, 3.8vh), 2.15rem); color:var(--text); line-height:1.25; }
-  .stats small{ display:block; margin-top:6px; font:500 0.62rem var(--mono); letter-spacing:0.12em; color:var(--faint); line-height:1.5; }
+  .stats b{ display:block; font-family:var(--display); font-weight:300; font-size: clamp(1.35rem, min(2.1vw, 3.8vh), 2.15rem); color:var(--text); line-height:1.25; }
+  .stats small{ display:block; margin-top:6px; font:500 0.72rem var(--mono); letter-spacing:0.12em; color:var(--faint); line-height:1.5; }
 
   /* ตัวอย่างเว็บ */
   .url{ display:inline-flex; align-items:center; gap:10px; padding:8px 14px; border-radius:999px; border:1px solid var(--line-strong); background: rgba(255,255,255,0.03); font:500 0.86rem var(--mono); color:var(--text); }
   .url i{ width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow: 0 0 0 4px var(--accent-dim); }
-  .legend{ display:flex; flex-wrap:wrap; gap:8px 16px; font-size:0.86rem; color:var(--soft); }
+  .legend{ display:flex; flex-wrap:wrap; gap:8px 16px; font-size:0.95rem; color:var(--soft); }
   .legend span{ display:inline-flex; align-items:center; gap:8px; }
   .legend span::before{ content:""; width:8px; height:8px; border-radius:2px; background:var(--c); }
 
@@ -224,16 +224,16 @@
   .qr-txt{ display:flex; flex-direction:column; gap:6px; min-width:0; }
   .qr-txt b{ font-weight:500; font-size: clamp(1.05rem, min(1.4vw, 2.5vh), 1.4rem); color:var(--accent); }
   .qr-txt .mono{ font-size:0.86rem; color:var(--text); overflow-wrap:anywhere; }
-  .qr-txt small{ font-size:0.84rem; color:var(--soft); line-height:1.6; }
+  .qr-txt small{ font-size:0.92rem; color:var(--soft); line-height:1.6; }
 
   /* สมาชิก */
   .members{ list-style:none; padding:0; counter-reset: m; border-top:1px solid var(--line); }
   .members li{ counter-increment: m; display:grid; grid-template-columns: 2em 8.6em 1fr; gap:10px; align-items:baseline; padding: clamp(6px, 1.05vh, 11px) 0; border-bottom:1px solid var(--line); font-size: clamp(0.95rem, min(1.2vw, 2.2vh), 1.2rem); }
-  .members li::before{ content: counter(m, decimal-leading-zero); font:500 0.72rem var(--mono); color:var(--gold-dim); }
+  .members li::before{ content: counter(m, decimal-leading-zero); font:500 0.78rem var(--mono); color:var(--gold); }
   .members .sid{ font:400 0.82em var(--mono); color:var(--faint); font-variant-numeric: tabular-nums; }
 
   /* ขอบคุณ */
-  .thanks{ font-family:var(--display); font-size: clamp(3.2rem, min(7.6vw, 13.5vh), 8rem); font-weight:200; letter-spacing:0.02em; line-height:1.05; }
+  .thanks{ font-family:var(--display); font-size: clamp(3.2rem, min(7.6vw, 13.5vh), 8rem); font-weight:300; letter-spacing:0.02em; line-height:1.05; }
   .thanks span{ color:var(--accent); }
 
   /* เบื้องหลังระบบ */
@@ -241,7 +241,7 @@
   .tech > div{ display:grid; grid-template-columns: 8.4em 1fr; gap:14px; padding: clamp(7px, 1.25vh, 12px) 0; border-bottom:1px solid var(--line); font-size:var(--body); }
   .tech dt{ color:var(--soft); }
   .tech dd{ margin:0; font-weight:500; }
-  .note{ display:flex; gap:10px; align-items:flex-start; font-size: clamp(0.84rem, min(0.98vw, 1.8vh), 1rem); color:var(--soft); line-height:1.6; margin-bottom:0; }
+  .note{ display:flex; gap:10px; align-items:flex-start; font-size: clamp(0.9rem, min(1.05vw, 1.9vh), 1.06rem); color:var(--soft); line-height:1.6; margin-bottom:0; }
   .note svg{ width:18px; height:18px; flex-shrink:0; margin-top:3px; stroke:var(--accent); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 
   .sr{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
@@ -1642,7 +1642,8 @@ function boot() {
       gl_FragColor = vec4(col * alpha, alpha);
     }`;
   const gates = paths.map((pa, i) => {
-    const ch = CHAPTER[i + 1], r = ch ? 3.1 : 2.6;
+    const ch = CHAPTER[i + 1], r = 3.1;
+    if (!ch) return null;
     const gate = new THREE.Group(); gate.position.copy(pa.G); gate.lookAt(pa.G.clone().sub(pa.tangent)); scene.add(gate);
     const ringMat = new THREE.MeshBasicMaterial({ color: COL.accent, toneMapped: false, transparent: true, opacity: 0.9 });
     const ring = new THREE.Mesh(new THREE.TorusGeometry(r, ch ? 0.055 : 0.04, 12, 180), ringMat); gate.add(ring);
@@ -1912,6 +1913,7 @@ function boot() {
     if (adjacent) {
       const pa = paths[Math.min(i, from)];
       curve = i > from ? pa.curve : pa.rcurve; gU = i > from ? pa.gU : 1 - pa.gU; gate = Math.min(i, from);
+      if (!gates[gate]) { gate = -1; gU = -9; } // ไม่ใช่หัวข้อใหญ่ → ไม่มีวาป
     } else {
       const P0 = cam.pos.clone(), mid = P0.clone().lerp(P1, 0.5);
       mid.y = Math.max(P0.y, P1.y) + (flight ? 6 : 26 + gap * 2.5);
@@ -2054,6 +2056,7 @@ function boot() {
     // ---- ประตูมิติ / เมือง / ท้องฟ้า ----
     let flash = warp * 0.3;
     gates.forEach((g, i) => {
+      if (!g) return;
       const on = flight && flight.gate === i;
       g.k = lerp(g.k, on ? 1 : 0.12, Math.min(1, dt * 3));
       const d = g.gate.position.distanceTo(camera.position);
